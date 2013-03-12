@@ -14,7 +14,7 @@ class WeiXin(object):
         self.xml_body = xml_body
 
     @classmethod
-    def on_connect(self, token=None, timestamp=None, nonce=None, signature=None, echostr=None):
+    def on_connect(cls, token=None, timestamp=None, nonce=None, signature=None, echostr=None):
         obj = WeiXin(token=token,
             timestamp=timestamp,
             nonce=nonce,
@@ -23,7 +23,7 @@ class WeiXin(object):
         return obj
 
     @classmethod
-    def on_message(self, xml_body):
+    def on_message(cls, xml_body):
         obj = WeiXin(xml_body=xml_body)
         return obj
 
